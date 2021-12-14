@@ -68,7 +68,7 @@ int client_handshake(int *to_server) {
 	printf("recieved ACK\n");
 
   remove(pid);
-	printf("removed secret pipe");
+	printf("removed secret pipe\n");
 
   write(*to_server, ACK, sizeof(ACK));
 	printf("sent final ACK\n");

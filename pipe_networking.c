@@ -17,7 +17,7 @@ int server_handshake(int *to_client) {
 	printf("opened well known pipe for reading\n");
 
   char message[100];
-  read(from_client, handshake, sizeof(handshake));
+  read(from_client, message, sizeof(message));
   message[strlen(message)] = 0;
 	printf("read well known pipe\n");
 
@@ -31,8 +31,8 @@ int server_handshake(int *to_client) {
   write(*to_client, ACK, sizeof(ACK));
 	printf("sent ACK\n");
 
-  read(from_client, handshake, sizeof(handshake));
-  printf("got final handshake\n");
+  read(from_client, message, sizeof(message));
+  printf("got final message\n");
 
   return from_client;
 }
